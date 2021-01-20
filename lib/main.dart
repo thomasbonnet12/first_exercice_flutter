@@ -1,3 +1,4 @@
+import 'package:exercice_part_1/answer.dart';
 import 'package:exercice_part_1/list_question_answer.dart';
 import 'package:flutter/material.dart';
 import 'button_to_page_two.dart';
@@ -38,17 +39,9 @@ class _MyAppState extends State<MyApp> {
                   children: [
                     Question(questionIndex: questionIndex),
                     SizedBox(height: 20),
-                    // Answer(),
-                    RaisedButton(
-                        child: Text('button'),
-                        onPressed: () {
-                          answerQuestion();
-                        }),
-                    RaisedButton(
-                        child: Text('button'),
-                        onPressed: () {
-                          answerQuestion();
-                        }),
+                    ...(questionAnswer[questionIndex]['answer'] as List<String>)
+                        .map((a) =>
+                            Answer(answer: a, answerFunction: answerQuestion)),
                     ButtonToPageTwo(),
                   ],
                 ),

@@ -1,6 +1,31 @@
-import 'package:flutter/material.dart';
+// var questionAnswer = ['4 + 4', '12 x 12'];
 
-var questionAnswer = ['4 + 4', '12 x 12'];
+var questionAnswer = [
+  {
+    'question': '2 + 2',
+    'answer': [
+      '4',
+      '5',
+      '7',
+    ],
+  },
+  {
+    'question': '6 + 6',
+    'answer': [
+      '4',
+      '12',
+      '7',
+    ],
+  },
+  {
+    'question': '8 + 2',
+    'answer': [
+      '10',
+      '5',
+      '7',
+    ],
+  },
+];
 
 // var questionAnswer = [
 //   {

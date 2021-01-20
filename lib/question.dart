@@ -12,7 +12,7 @@ class Question extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      questionAnswer[questionIndex],
+      questionAnswer[questionIndex]['question'],
       style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
     );
   }
