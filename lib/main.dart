@@ -1,5 +1,6 @@
 import 'package:exercice_part_1/answer.dart';
 import 'package:exercice_part_1/list_question_answer.dart';
+import 'package:exercice_part_1/quiz.dart';
 import 'package:flutter/material.dart';
 import 'button_to_page_two.dart';
 import 'question.dart';
@@ -14,10 +15,10 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  var questionIndex = 0;
-  void answerQuestion() {
+  var _questionIndex = 0;
+  void _answerQuestion() {
     setState(() {
-      questionIndex = questionIndex + 1;
+      _questionIndex = _questionIndex + 1;
     });
   }
 
@@ -32,20 +33,11 @@ class _MyAppState extends State<MyApp> {
             style: TextStyle(fontSize: 15, color: Colors.white),
           ),
         ),
-        body: questionIndex < questionAnswer.length
-            ? Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Question(questionIndex: questionIndex),
-                    SizedBox(height: 20),
-                    ...(questionAnswer[questionIndex]['answer'] as List<String>)
-                        .map((a) =>
-                            Answer(answer: a, answerFunction: answerQuestion)),
-                    ButtonToPageTwo(),
-                  ],
-                ),
-              )
+        body: _questionIndex < questionAnswer.length
+            ? Quiz(
+                questionIndex: _questionIndex,
+                questionAnswer: questionAnswer,
+                answerQuestion: _answerQuestion)
             : Center(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,

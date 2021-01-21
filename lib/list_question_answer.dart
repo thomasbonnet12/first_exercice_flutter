@@ -7,7 +7,7 @@ var questionAnswer = [
       '4',
       '5',
       '7',
-    ],
+    ]
   },
   {
     'question': '6 + 6',

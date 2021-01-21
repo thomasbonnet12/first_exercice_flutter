@@ -4,8 +4,7 @@ class Answer extends StatelessWidget {
   final String answer;
   final Function answerFunction;
 
-  const Answer({Key key, @required this.answer, @required this.answerFunction})
-      : super(key: key);
+  const Answer({@required this.answer, @required this.answerFunction});
 
   @override
   Widget build(BuildContext context) {
